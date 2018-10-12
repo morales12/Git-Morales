@@ -1,0 +1,13 @@
+FROM node:8-alpine
+MAINTAINER Bastien
+
+EXPOSE 8000
+RUN mkdir /docker_typescript
+RUN mkdir /docker_typescript/build
+WORKDIR /docker_typescript
+COPY index.js /docker_typescript/build
+COPY package.json /docker_typescript
+COPY package-lock.json /docker_typescript
+COPY node_modules /docker_typescript
+RUN ls
+CMD ["node","build/index.js"]

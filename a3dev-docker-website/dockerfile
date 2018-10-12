@@ -1,0 +1,4 @@
+FROM node:8.2
+WORKDIR /docker_typescript/A3DEV-docker-website
+COPY . /docker_typescript/A3DEV-docker-website
+CMD ["node","build/index.js"]
